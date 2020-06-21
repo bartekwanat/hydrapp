@@ -1,13 +1,91 @@
 @import "~normalize.css";
-
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "_variables";
 @import "modules/hello.scss";
 
+
+
+
 body {
-  background: $wtf;
+  background-image: url("../assets/img/underwater.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+.name {
+  position: fixed;
+  top: -2vh;
+
+  .name__title {
+    font-family: 'MuseoModerno', cursive;
+    font-weight: 300;
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(24, 45, 68);
+    letter-spacing: .1rem;
+
+
+    text-shadow: 0px 4px 4px rgba(96, 164, 209, .5);
+  }
+}
+
+.app {
+  position: relative;
+  top: -5vh;
+
+  .app__logo {
+
+    animation: waterDrop 5s infinite linear both;
+  }
+}
+
+
+
+.button__container {
+  position: absolute;
+
+  left: 50vw;
+  height: 200px;
+  width: 50px;
+  z-index: 1;
+  display: flex;
+  top: 45vh;
+  flex-direction: column;
+}
+
+button {
+  z-index: 100;
+  cursor: pointer;
+}
+
+.button__container--plus {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.button__container--minus {
+  background-color: transparent;
+  border: none;
+
+}
+
+
+.result__container {
+  position: absolute;
+  top: 70vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: rgb(24, 45, 68);
+  text-shadow: 0px 4px 4px rgba(96, 164, 209, .5);
+  text-align: center;
+
 }
