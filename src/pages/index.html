@@ -69,24 +69,43 @@
 </head>
 
 <body>
-  <header class="name">
-    <h1 class="name__title">hydrapp</h1>
-  </header>
-  <div class="button__container">
-    <button class="button__container--plus"><img class="button__container--plus-image" src="../assets/img/plus.svg"
-        alt="plus "></button>
-    <button class="button__container--minus"><img class="button__container--minus-image" src="../assets/img/minus2.svg"
-        alt="minus"></button>
+  <div class="info__menu">
+    <button class="info__menu--first fas fa-info"></button>
+
   </div>
-  <div class="app">
-    <img class="app__logo" src="../assets/img/water-drop.svg" alt="drop of water" />
-    <span class="hello__circles"></span>
+  <section class="menu__wrapper">
+
+    <article class="info__body">
+      <i class="info__body--icon far fa-user"></i>
+      <p class="info__body--paragraph">Up to 60% of the human adult body is water.</p>
+    </article>
+    <article class="info__consumption">
+      <i class="info__consumption--icon fas fa-hand-holding-water"></i>
+      <p class="info__consumption--paragraph">Average human person should drink about 2-3 liters daily. </p>
+    </article>
+    </ul>
+  </section>
+  <div class="app-wrapper">
+    <header class="name">
+      <h1 class="name__title">hydrapp</h1>
+    </header>
+    <div class="button__container">
+      <button class="button__container--plus button__container--both"><img class="button__container--plus-image"
+          src="../assets/img/plus.svg" alt="plus "></button>
+      <button class="button__container--minus button__container--both"><img class="button__container--minus-image"
+          src="../assets/img/minus2.svg" alt="minus"></button>
+    </div>
+    <div class="app">
+      <img class="app__logo" src="../assets/img/water-drop.svg" alt="drop of water" />
+      <span class="hello__circles"></span>
+    </div>
+    <div class="result__container">
+      <p class="result__container--text">Today, You drink: <br> <strong class="counter--js">0 <br></strong> ml
+        of
+        water.</p>
+    </div>
   </div>
-  <div class="result__container">
-    <p class="result__container--text">Today, You drink: <strong class="counter--js">0</strong> ml
-      of
-      water.</p>
-  </div>
+  <script src="https://kit.fontawesome.com/97f951d406.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

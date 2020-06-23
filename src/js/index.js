@@ -12,6 +12,9 @@ const addButton = document.querySelector(".button__container--plus-image");
 const deleteButton = document.querySelector(".button__container--minus-image");
 const counter = document.querySelector('.counter--js');
 
+const infoIcon = document.querySelector(".fa-info");
+const infoMenu = document.querySelector(".menu__wrapper");
+
 
 let numberOfGlass = 0;
 
@@ -30,16 +33,19 @@ const deleteGlass = function () {
  }
 };
 
+//
+
+const infoMenuOpen = function () {
+ infoMenu.classList.toggle("open--info");
+}
+
+infoIcon.addEventListener("click", infoMenuOpen);
+
+
+
+
 
 
 
 addButton.addEventListener("click", addGlass);
 deleteButton.addEventListener("click", deleteGlass);
-
-
-
-console.log(counter);
-
-
-
-console.log("lalalal");
