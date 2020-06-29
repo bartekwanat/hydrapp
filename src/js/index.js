@@ -14,7 +14,7 @@ const counter = document.querySelector('.counter--js');
 
 const infoIcon = document.querySelector(".fa-info");
 const infoMenu = document.querySelector(".info__menu")
-const menuWrapper = document.querySelector(".menu__wrapper");
+const infoWrapper = document.querySelector(".info__wrapper");
 
 const key = new Date().toLocaleString().slice(0, 10);
 console.log(`Today is ${key}`);
@@ -45,7 +45,6 @@ const deleteGlass = function () {
 
 
 let entry = localStorage.getItem(key);
-
 if (entry) {
  numberOfGlass = parseInt(entry);
 
@@ -70,7 +69,7 @@ if (entry) {
 // info-menu 
 
 const infoMenuOpen = function () {
- menuWrapper.classList.toggle("open--info");
+ infoWrapper.classList.toggle("open--info");
  infoMenu.classList.toggle("info--js");
  infoIcon.classList.toggle("info--js")
 }
