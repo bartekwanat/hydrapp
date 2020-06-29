@@ -1,12 +1,12 @@
 var VERSION = '24';
 
-this.addEventListener('install', function(e) {
+this.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(cache => {
     return cache.addAll([]);
   }))
 });
 
-this.addEventListener('fetch', function(e) {
+this.addEventListener('fetch', function (e) {
   var tryInCachesFirst = caches.open(VERSION).then(cache => {
     return cache.match(e.request).then(response => {
       if (!response) {
@@ -21,7 +21,7 @@ this.addEventListener('fetch', function(e) {
   e.respondWith(tryInCachesFirst);
 });
 
-this.addEventListener('activate', function(e) {
+this.addEventListener('activate', function (e) {
   e.waitUntil(caches.keys().then(keys => {
     return Promise.all(keys.map(key => {
       if (key !== VERSION)
