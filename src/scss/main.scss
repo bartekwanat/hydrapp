@@ -9,28 +9,30 @@
 
 
 
+
 body {
   background-image: url("../assets/img/underwater.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
 
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+
   overflow: hidden;
 }
 
 
 
 
-.menu__wrapper {
-  position: fixed;
+.info__wrapper {
+  position: absolute;
   height: 100vh;
   width: 100vw;
-  z-index: 100;
+  z-index: 10;
   background-color: $bgColor;
   cursor: pointer;
   display: flex;
@@ -40,7 +42,7 @@ body {
   font-size: 1.5rem;
   font-family: "Roboto";
   color: white;
-  transform: translateY(-100%);
+  transform: translateY(-150%);
   transition: .5s;
 
 
@@ -87,18 +89,21 @@ body {
 
 
 
+
   &:hover {
     animation: shake 0.5s;
   }
 
 
   .fa-info {
+
     border: none;
     background-color: transparent;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: $fontColor;
     cursor: pointer;
+    z-index: 1000;
   }
 }
 
@@ -183,7 +188,20 @@ body {
   font-size: 2.5rem;
 }
 
+
+.info--js {
+  color: white !important;
+  border-color: white;
+  transition: .2s;
+  // border: 4px solid white !important;
+
+
+}
+
+
 .open--info {
   transform: translateY(0%);
   transition: .5s;
 }
+
+@import "_media.scss";

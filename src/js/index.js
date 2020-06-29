@@ -13,39 +13,69 @@ const deleteButton = document.querySelector(".button__container--minus-image");
 const counter = document.querySelector('.counter--js');
 
 const infoIcon = document.querySelector(".fa-info");
-const infoMenu = document.querySelector(".menu__wrapper");
+const infoMenu = document.querySelector(".info__menu")
+const menuWrapper = document.querySelector(".menu__wrapper");
+
+const key = new Date().toLocaleString().slice(0, 10);
+console.log(`Today is ${key}`);
 
 
 let numberOfGlass = 0;
 
 
 const addGlass = function () {
- numberOfGlass += 200;
+ numberOfGlass++;
  counter.innerHTML = numberOfGlass
+ localStorage.setItem(key, numberOfGlass);
 };
 
 const deleteGlass = function () {
  if (numberOfGlass > 0) {
-  numberOfGlass -= 200;
+  numberOfGlass--;
   counter.innerHTML = numberOfGlass;
+  localStorage.setItem(key, numberOfGlass);
  } else {
   numberOfGlass = 0;
  }
 };
 
-//
+// local storage 
 
-const infoMenuOpen = function () {
- infoMenu.classList.toggle("open--info");
+
+
+
+let entry = localStorage.getItem(key);
+
+if (entry) {
+ numberOfGlass = parseInt(entry);
+
+ let i = 0;
+ const time = setInterval(function () {
+  counter.innerHTML = `${i}`;
+  console.log(`licznik: ${i}`);
+  if (i >= numberOfGlass) {
+   clearInterval(time);
+  }
+  i++;
+ }, 50);
+ console.log(`${numberOfGlass}`);
+} else {
+ counter.innerHTML = `${numberOfGlass} glass`;
+ console.log(`${numberOfGlass} glass`);
+ localStorage.setItem(key, numberOfGlass);
 }
 
+
+
+// info-menu 
+
+const infoMenuOpen = function () {
+ menuWrapper.classList.toggle("open--info");
+ infoMenu.classList.toggle("info--js");
+ infoIcon.classList.toggle("info--js")
+}
+
+
 infoIcon.addEventListener("click", infoMenuOpen);
-
-
-
-
-
-
-
 addButton.addEventListener("click", addGlass);
 deleteButton.addEventListener("click", deleteGlass);
