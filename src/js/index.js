@@ -14,7 +14,7 @@ const counter = document.querySelector('.counter--js');
 
 const infoIcon = document.querySelector(".fa-info");
 const infoMenu = document.querySelector(".info__menu")
-const infoWrapper = document.querySelector(".info__wrapper");
+const menuWrapper = document.querySelector(".info__wrapper");
 
 const key = new Date().toLocaleString().slice(0, 10);
 console.log(`Today is ${key}`);
@@ -47,20 +47,17 @@ const deleteGlass = function () {
 let entry = localStorage.getItem(key);
 if (entry) {
  numberOfGlass = parseInt(entry);
-
  let i = 0;
  const time = setInterval(function () {
   counter.innerHTML = `${i}`;
-  console.log(`licznik: ${i}`);
+
   if (i >= numberOfGlass) {
    clearInterval(time);
   }
   i++;
- }, 50);
- console.log(`${numberOfGlass}`);
+ }, 100);
 } else {
- counter.innerHTML = `${numberOfGlass} glass`;
- console.log(`${numberOfGlass} glass`);
+ counter.innerHTML = `${numberOfGlass}`;
  localStorage.setItem(key, numberOfGlass);
 }
 
@@ -69,7 +66,7 @@ if (entry) {
 // info-menu 
 
 const infoMenuOpen = function () {
- infoWrapper.classList.toggle("open--info");
+ menuWrapper.classList.toggle("open--info");
  infoMenu.classList.toggle("info--js");
  infoIcon.classList.toggle("info--js")
 }
