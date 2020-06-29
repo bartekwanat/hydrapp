@@ -112,17 +112,15 @@ body {
 
 .name {
   position: relative;
-
+  top: -3vh;
 
   .name__title {
     font-family: 'MuseoModerno', cursive;
     font-weight: 300;
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-align: center;
     color: $fontColor;
     letter-spacing: .1rem;
-
-
     text-shadow: 0px 4px 4px rgba(96, 164, 209, .5);
   }
 }
